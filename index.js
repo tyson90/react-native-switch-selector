@@ -140,7 +140,8 @@ export default class SwitchSelector extends Component {
       valuePadding,
       height,
       bold,
-      disabled
+      disabled,
+      textProps
     } = this.props;
 
     const options = this.props.options.map((element, index) => {
@@ -181,6 +182,7 @@ export default class SwitchSelector extends Component {
               },
               is_selected ? selectedTextStyle : textStyle
             ]}
+            {...textProps}
           >
             {element.label}
           </Text>
@@ -271,5 +273,6 @@ SwitchSelector.defaultProps = {
   returnObject: false,
   animationDuration: 100,
   disabled: false,
-  disableValueChangeOnPress: false
+  disableValueChangeOnPress: false,
+  textProps: {},
 };
